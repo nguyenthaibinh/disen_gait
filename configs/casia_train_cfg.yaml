@@ -1,0 +1,193 @@
+data_path: '{ROOT_DIR}/data/casia/cooked/skel_full'
+casia_train_001:
+  train_conditions: ['bg-01', 'bg-02', 'nm-01', 'nm-02']
+  val_gallery_conditions: ['nm-01', 'nm-02']
+  val_prob_conditions: ['bg-01', 'bg-01']
+  train_views: ['090']
+  val_gallery_views: ['090']
+  val_prob_views: ['090']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_one_view_090"
+
+casia_train_002:
+  train_conditions: ['bg-01', 'bg-02', 'nm-01', 'nm-02']
+  val_gallery_conditions: ['bg-01', 'bg-02', 'nm-01', 'nm-02']
+  val_prob_conditions: ['nm-03', 'nm-04']
+  train_views: ['090']
+  val_gallery_views: ['090']
+  val_prob_views: ['090']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_one_view_090"
+
+casia_train_003:
+  train_conditions: ['bg-01', 'bg-02']
+  val_gallery_conditions: ['bg-01', 'bg-02']
+  val_prob_conditions: ['bg-01', 'bg-02']
+  train_views: ['054']
+  val_gallery_views: ['054']
+  val_prob_views: ['054']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_one_view_054_bag"
+
+casia_train_004:
+  train_conditions: ['bg-01', 'bg-02', 'cl-01', 'cl-02', 'nm-01', 'nm-02', 'nm-03', 'nm-04', 'nm-05', 'nm-06']
+  val_gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04', 'nm-05', 'nm-06']
+  val_prob_conditions: ['bg-01', 'bg-01']
+  train_views: ['090']
+  val_gallery_views: ['090']
+  val_prob_views: ['090']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_one_view_90"
+
+casia_train_005:
+  train_conditions: ['bg-01', 'bg-02', 'cl-01', 'cl-02']
+  val_gallery_conditions: ['bg-01', 'bg-02', 'cl-01', 'cl-02']
+  val_prob_conditions: ['bg-01', 'bg-01']
+  train_views: ['090']
+  val_gallery_views: ['090']
+  val_prob_views: ['090']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_one_view_90"
+
+casia_train_006:
+  train_conditions: ['bg-01', 'bg-02', 'cl-01', 'cl-02', 'nm-01', 'nm-02', 'nm-03', 'nm-04']
+  val_gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  val_prob_conditions: ['bg-01', 'bg-01']
+  train_views: ['072', '090', '108']
+  val_gallery_views: ['090']
+  val_prob_views: ['072', '090', '108']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_one_view_90"
+
+casia_train_007:
+  train_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  val_gallery_conditions: ['bg-01', 'bg-01']
+  val_prob_conditions: ['nm-01']
+  train_views: ['090']
+  val_gallery_views: ['090']
+  val_prob_views: ['090']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_one_view_90"
+
+casia_train_2:
+  train_conditions: ['bg-01', 'bg-02', 'cl-01', 'cl-02', 'nm-01', 'nm-02', 'nm-03', 'nm-04']
+  val_gallery_conditions: ['nm-01']
+  val_prob_conditions: ['nm-02']
+  train_views: ['072']
+  val_gallery_views: ['072']
+  val_prob_views: ['072']
+  length: 48
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_one_view_072"
+
+casia_train_3:
+  train_conditions: ['bg-01', 'bg-02', 'cl-01', 'cl-02', 'nm-01', 'nm-02', 'nm-03', 'nm-04']
+  val_gallery_conditions: ['nm-05']
+  val_prob_conditions: ['nm-06']
+  train_views: ['072', '090', '108']
+  val_gallery_views: ['072', '090', '108']
+  val_prob_views: ['072', '090', '108']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_multi_view_072_090_126"
+
+casia_train_4:
+  train_conditions: ['bg-01', 'bg-02', 'cl-01', 'cl-02', 'nm-01', 'nm-02', 'nm-03', 'nm-04']
+  val_gallery_conditions: ['nm-05']
+  val_prob_conditions: ['nm-06']
+  train_views: ['054', '072', '090', '108', '126']
+  val_gallery_views: ['054', '072', '090', '108', '126']
+  val_prob_views: ['054', '072', '090', '108', '126']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_multi_view_054_072_090_108_126"
+
+casia_train_100:
+  train_conditions: ['bg-01', 'bg-02', 'cl-01', 'cl-02', 'nm-01', 'nm-02', 'nm-03', 'nm-04', 'nm-05', 'nm-06']
+  val_gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  val_prob_conditions: ['bg-01', 'bg-02']
+  train_views: ['090']
+  val_gallery_views: ['090']
+  val_prob_views: ['090']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_multi_view_090"
+
+casia_train_101:
+  train_conditions: ['bg-01', 'bg-02', 'cl-01', 'cl-02', 'nm-01', 'nm-02', 'nm-03', 'nm-04', 'nm-05', 'nm-06']
+  val_gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  val_prob_conditions: ['nm-05', 'nm-06']
+  train_views: ['072']
+  val_gallery_views: ['072']
+  val_prob_views: ['072']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_multi_view_072"
+
+casia_train_102:
+  train_conditions: ['bg-01', 'bg-02', 'cl-01', 'cl-02', 'nm-01', 'nm-02', 'nm-03', 'nm-04', 'nm-05', 'nm-06']
+  val_gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  val_prob_conditions: ['nm-05', 'nm-06']
+  train_views: ['108']
+  val_gallery_views: ['108']
+  val_prob_views: ['108']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_multi_view_108"
+
+casia_train_103:
+  train_conditions: ['bg-01', 'bg-02', 'cl-01', 'cl-02', 'nm-01', 'nm-02', 'nm-03', 'nm-04', 'nm-05', 'nm-06']
+  val_gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  val_prob_conditions: ['bg-01', 'bg-02']
+  train_views: ['072', '090', '108']
+  val_gallery_views: ['072', '090', '108']
+  val_prob_views: ['072', '090', '108']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_multi_view_072_090_108"
+
+casia_train_104:
+  train_conditions: ['bg-01', 'bg-02', 'cl-01', 'cl-02', 'nm-01', 'nm-02', 'nm-03', 'nm-04', 'nm-05', 'nm-06']
+  val_gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  val_prob_conditions: ['bg-01', 'bg-02']
+  train_views: ['036', '054', '072', '090', '108', '126', '144']
+  val_gallery_views: ['036', '054', '072', '090', '108', '126', '144']
+  val_prob_views: ['036', '054', '072', '090', '108', '126', '144']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_multi_view_036_to_144"
+
+casia_train_105:
+  train_conditions: ['bg-01', 'bg-02', 'cl-01', 'cl-02', 'nm-01', 'nm-02', 'nm-03', 'nm-04', 'nm-05', 'nm-06']
+  val_gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  val_prob_conditions: ['nm-05', 'nm-06']
+  train_views: ['000', '018', '036', '054', '072', '090', '108', '126', '144', '162', '180']
+  val_gallery_views: ['000', '018', '036', '054', '072', '090', '108', '126', '144', '162', '180']
+  val_prob_views: ['000', '018', '036', '054', '072', '090', '108', '126', '144', '162', '180']
+  channels: 1
+  width: 64
+  height: 64
+  exp_setting: "train_all_views"

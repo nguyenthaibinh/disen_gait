@@ -1,0 +1,281 @@
+casia_test_0:
+  # Same view, same condition.
+  gallery_conditions: ['bg-01', 'cl-01', 'nm-01', 'nm-02', 'nm-03']
+  prob_conditions: ['bg-02', 'cl-02', 'nm-04', 'nm-05', 'nm-06']
+  gallery_views: ['090']
+  prob_views: ['090']
+  exp_setting: 'test_one_view_090'
+
+casia_test_1:
+  # Same view, same condition.
+  gallery_conditions: ['nm-05']
+  prob_conditions: ['nm-06']
+  gallery_views: ['090']
+  prob_views: ['090']
+  exp_setting: 'test_one_view_090'
+
+casia_test_2:
+  # Same view, same condition.
+  gallery_conditions: ['nm-05']
+  prob_conditions: ['nm-06']
+  gallery_views: ['072']
+  prob_views: ['072']
+  exp_setting: 'test_one_view_072'
+
+casia_test_3:
+  # Same view, different condition.
+  gallery_conditions: ['bg-01']
+  prob_conditions: ['nm-01']
+  gallery_views: ['090']
+  prob_views: ['090']
+  exp_setting: 'test_cross_condition_bg_01_nm_01'
+
+casia_test_400:
+  # Same view, same condition.
+  gallery_conditions: ['bg-01']
+  prob_conditions: ['bg-02']
+  gallery_views: ['090']
+  prob_views: ['090']
+  exp_setting: 'test_one_view_090'
+
+casia_test_401:
+  # Same view, same condition.
+  gallery_conditions: ['cl-01']
+  prob_conditions: ['cl-02']
+  gallery_views: ['090']
+  prob_views: ['090']
+  exp_setting: 'test_one_view_090'
+
+casia_test_402:
+  # Same view, same condition.
+  gallery_conditions: ['nm-01']
+  prob_conditions: ['nm-02']
+  gallery_views: ['090']
+  prob_views: ['090']
+  exp_setting: 'test_one_view_090'
+
+casia_test_501:
+  # Same view, same condition.
+  gallery_conditions: ['bg-01']
+  prob_conditions: ['nm-02']
+  gallery_views: ['090']
+  prob_views: ['090']
+  exp_setting: 'test_one_view_090'
+
+casia_test_502:
+  # Same view, same condition.
+  gallery_conditions: ['bg-01']
+  prob_conditions: ['cl-02']
+  gallery_views: ['090']
+  prob_views: ['090']
+  exp_setting: 'test_one_view_090'
+
+casia_test_503:
+  # Same view, same condition.
+  gallery_conditions: ['cl-01']
+  prob_conditions: ['bg-02']
+  gallery_views: ['090']
+  prob_views: ['090']
+  exp_setting: 'test_one_view_090'
+
+casia_test_504:
+  # Same view, same condition.
+  gallery_conditions: ['cl-01']
+  prob_conditions: ['nm-02']
+  gallery_views: ['090']
+  prob_views: ['090']
+  exp_setting: 'test_one_view_090'
+
+casia_test_601:
+  # Same view, same condition.
+  gallery_conditions: ['nm-05']
+  prob_conditions: ['nm-06']
+  gallery_views: ['090']
+  prob_views: ['072']
+  exp_setting: 'test_one_view_090'
+
+casia_test_602:
+  # Same view, same condition.
+  gallery_conditions: ['nm-05']
+  prob_conditions: ['nm-06']
+  gallery_views: ['072', '108']
+  prob_views: ['090']
+  exp_setting: 'test_one_view_090'
+
+casia_test_603:
+  # Same view, same condition.
+  gallery_conditions: ['bg-01', 'cl-01', 'nm-01', 'nm-02', 'nm-03']
+  prob_conditions: ['bg-02', 'cl-02', 'nm-04', 'nm-05', 'nm-06']
+  gallery_views: ['072', '108']
+  prob_views: ['090']
+  exp_setting: 'test_one_view_090'
+
+casia_test_604:
+  # Same view, same condition.
+  gallery_conditions: ['bg-01', 'cl-01', 'nm-01', 'nm-02', 'nm-03']
+  prob_conditions: ['bg-02', 'cl-02', 'nm-04', 'nm-05', 'nm-06']
+  gallery_views: ['072', '090', '108']
+  prob_views: ['072', '090', '108']
+  exp_setting: 'test_one_view_090'
+
+casia_test_700:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['nm-05', 'nm-06']
+  gallery_views: ['072', '090', '108']
+  prob_views: ['072']
+
+casia_test_701:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['nm-05', 'nm-06']
+  gallery_views: ['072', '090', '108']
+  prob_views: ['090']
+
+casia_test_702:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['nm-05', 'nm-06']
+  gallery_views: ['072', '090', '108']
+  prob_views: ['108']
+
+casia_test_703:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['nm-05', 'nm-06']
+  gallery_views: ['072']
+  prob_views: ['072']
+
+casia_test_704:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['nm-05', 'nm-06']
+  gallery_views: ['090']
+  prob_views: ['090']
+
+casia_test_705:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['nm-05', 'nm-06']
+  gallery_views: ['108']
+  prob_views: ['108']
+
+casia_test_706:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['nm-05', 'nm-06']
+  gallery_views: ['036', '054', '072', '090', '108', '126', '144']
+  prob_views: ['054']
+
+casia_test_707:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['nm-05', 'nm-06']
+  gallery_views: ['036', '054', '072', '090', '108', '126', '144']
+  prob_views: ['090']
+
+casia_test_708:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['nm-05', 'nm-06']
+  gallery_views: ['036', '054', '072', '090', '108', '126', '144']
+  prob_views: ['126']
+
+casia_test_800:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['cl-01', 'cl-02']
+  gallery_views: ['072', '090', '108']
+  prob_views: ['072']
+
+casia_test_801:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['cl-01', 'cl-02']
+  gallery_views: ['072', '090', '108']
+  prob_views: ['090']
+
+casia_test_802:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['cl-01', 'cl-02']
+  gallery_views: ['072', '090', '108']
+  prob_views: ['108']
+
+casia_test_803:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['cl-01', 'cl-02']
+  gallery_views: ['072']
+  prob_views: ['072']
+
+casia_test_804:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['cl-01', 'cl-02']
+  gallery_views: ['090']
+  prob_views: ['090']
+
+casia_test_805:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['cl-01', 'cl-02']
+  gallery_views: ['108']
+  prob_views: ['108']
+
+casia_test_806:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['cl-01', 'cl-02']
+  gallery_views: ['036', '054', '072', '090', '108', '126', '144']
+  prob_views: ['054']
+
+casia_test_807:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['cl-01', 'cl-02']
+  gallery_views: ['036', '054', '072', '090', '108', '126', '144']
+  prob_views: ['090']
+
+casia_test_808:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['cl-01', 'cl-02']
+  gallery_views: ['036', '054', '072', '090', '108', '126', '144']
+  prob_views: ['126']
+
+casia_test_900:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['bg-01', 'bg-02']
+  gallery_views: ['072', '090', '108']
+  prob_views: ['072']
+
+casia_test_901:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['bg-01', 'bg-02']
+  gallery_views: ['072', '090', '108']
+  prob_views: ['090']
+
+casia_test_902:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['bg-01', 'bg-02']
+  gallery_views: ['072', '090', '108']
+  prob_views: ['108']
+
+casia_test_903:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['bg-01', 'bg-02']
+  gallery_views: ['072']
+  prob_views: ['072']
+
+casia_test_904:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['bg-01', 'bg-02']
+  gallery_views: ['090']
+  prob_views: ['090']
+
+casia_test_905:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['bg-01', 'bg-02']
+  gallery_views: ['108']
+  prob_views: ['108']
+
+casia_test_906:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['bg-01', 'bg-02']
+  gallery_views: ['036', '054', '072', '090', '108', '126', '144']
+  prob_views: ['054']
+
+casia_test_907:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['bg-01', 'bg-02']
+  gallery_views: ['036', '054', '072', '090', '108', '126', '144']
+  prob_views: ['090']
+
+casia_test_908:
+  gallery_conditions: ['nm-01', 'nm-02', 'nm-03', 'nm-04']
+  prob_conditions: ['bg-01', 'bg-02']
+  gallery_views: ['036', '054', '072', '090', '108', '126', '144']
+  prob_views: ['126']
