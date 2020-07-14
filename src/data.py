@@ -118,17 +118,22 @@ def load_image(path, height=64, width=64, channels=1):
     in_image = np.transpose(in_image, (2, 0, 1))
     return in_image
 
-def sample_image_path(data_root, sub_id, condition_set, view_set):
-    file_path = None
-    condition = None
-    view = None
-
-    while file_path is None:
-        condition = random.choice(condition_set)
-        view = random.choice(view_set)
-        file_path = Path(data_root, f'{sub_id}/{condition}/{sub_id}-{condition}-{view}.png')
-        if file_path.exists():
-            file_path = str(file_path)
-        else:
-            file_path = None
-    return file_path, condition, view
+def load_multi_images(data_root, subject_ids, conditions, views, channels=1, width=64, height=64):
+    paths = []
+    list_subject_ids = []
+    list_conditions = []
+    list_views = []
+    images = []
+    for sub_id in subject_ids:
+        for condition in conditions:
+            for view in views:
+                file_path = Path(data_root, f'{sub_id}/{condition}/{sub_id}-{condition}-{view}.png')
+                if file_path.exists():
+                    paths.append(file_path)
+                    list_subject_ids.append(sub_id)
+                    list_conditions.append(condition)
+                    list_views.append(view)
+                    img = load_image(file_path)
+                    images.append(img)
+    images = images.asarray(images)
+    return images, list_subject_ids, list_conditions, list_views

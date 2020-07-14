@@ -7,7 +7,8 @@ import torchvision as tv
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 from data import TripletDataset
-from accuracy import knn_evaluate
+from metrics import knn_evaluate
+from pathlib import Path
 
 from nets.disentanged_autoencoder import DlrAutoEncoder
 from nets.encoders import Encoder
@@ -37,7 +38,7 @@ def get_triplet_loss(anchor, positive, negative, margin, size_average=True):
     losses = F.relu(distance_positive - distance_negative + margin)
     return losses.mean() if size_average else losses.sum()
 
-class DlrAutoEncTrainer():
+class DlrAutoEncTrainer(object):
     def __init__(self, in_size=(1, 64, 64), lr=0.001, beta=250, beta1=0.5, beta2=0.999,
                  margin=2.0, device='gpu', log_dir='./tensor_log', multi_gpu=False,
                  p_dropout=0.5, num_workers=8, checkpoint_freq=100, neg_ratio=0.5,
@@ -86,28 +87,27 @@ class DlrAutoEncTrainer():
         self.real_label = 1
         self.fake_label = 0
 
+        self.training = False
+
     def zero_grad(self):
         self.ae_optim.zero_grad()
         self.g_optim.zero_grad()
         self.d_optim.zero_grad()
 
-    def compute_loss(self, x1, x2, x1_hat, x2_hat, x1_swap, x2_swap, z1_id, z2_id, labels):
-        # compute reconstruction loss
-        recon_loss = 0
-        for i in range(len(x1)):
-            recon_loss += (1 - labels[i]) * F.mse_loss(x1[i], x1_swap[i])
-            recon_loss += (1 - labels[i]) * F.mse_loss(x2[i], x2_swap[i])
-            recon_loss += labels[i] * F.mse_loss(x1[i], x1_hat[i])
-            recon_loss += labels[i] * F.mse_loss(x2[i], x2_hat[i])
-
-        contrastive_loss = get_contrastive_loss(z1_id, z2_id, labels, self.margin)
-
-        return recon_loss, contrastive_loss
-
-    def train_epoch(self, data_loader, epoch):
+    def train_mode(self):
         self.encoder.train()
         self.decoder.train()
         self.discriminator.train()
+        self.training = True
+
+    def eval_mode(self):
+        self.encoder.eval()
+        self.decoder.eval()
+        self.discriminator.eval()
+        self.training = False
+
+    def train_epoch(self, data_loader, epoch):
+        self.train_mode()
 
         epoch_recon_losses = []
         epoch_triplet_losses = []
@@ -162,31 +162,6 @@ class DlrAutoEncTrainer():
 
         return recon_loss, triplet_loss, z_pos_distance, z_neg_distance
 
-    def compute_d_loss(self, x_real, x_fake):
-        # update discriminator
-        ## update with real batch
-        b_size = len(x_real)
-        real_label = th.full((b_size,), self.real_label, device=self.device)
-        scores = self.d_net(x_real)
-        err_d_real = F.binary_cross_entropy(scores, real_label)
-
-        ## update with fake batch
-        b_size = len(x_fake)
-        fake_label = th.full((b_size,), self.fake_label, device=self.device)
-        scores = self.d_net(x_fake.detach())
-        err_d_fake = F.binary_cross_entropy(scores, fake_label)
-        err_d_fake.backward()
-        err_d = err_d_real + err_d_fake
-        self.d_optim.step()
-
-        # Update encoder-decoder net
-        real_label = th.full((b_size,), self.real_label, device=self.device)
-        scores = self.d_net(x_fake)
-        g_err = F.binary_cross_entropy(scores, real_label)
-        g_err.backward()
-        self.g_optim.step()
-        return 0
-
     def train(self, train_set, validation_set, num_epochs=100, verbose=True):
         for epoch in range(1, num_epochs + 1):
             data_loader = DataLoader(dataset=train_set, batch_size=32, shuffle=True,
@@ -210,6 +185,9 @@ class DlrAutoEncTrainer():
             """
 
             self.visualize(epoch, train_set, size=32)
+
+            if epoch % 100 == 0:
+                self.save_model(epoch)
 
             if verbose is True:
                 print(f'Epoch {epoch + 0:0005}/{num_epochs}: recon_loss: {recon_loss:.5f}, '
@@ -280,3 +258,19 @@ class DlrAutoEncTrainer():
             print(e)
             z_id = None
         return z_id
+
+    def save_model(self, epoch):
+        encoder_path = Path(self.checkpoint_dir, f"encoder_epoch_{epoch:05}.pth")
+        decoder_path = Path(self.checkpoint_dir, f"decoder_epoch_{epoch:05}.pth")
+        discriminator_path = Path(self.checkpoint_dir, f"discriminator_epoch_{epoch:05}.pth")
+        if encoder_path.exists():
+            encoder_path.unlink()
+        if decoder_path.exists():
+            decoder_path.unlink()
+        if discriminator_path.exists():
+            discriminator_path.unlink()
+
+        th.save(self.encoder.state_dict(), str(encoder_path))
+        th.save(self.decoder.state_dict(), str(decoder_path))
+        th.save(self.discriminator.state_dict(), str(discriminator_path))
+

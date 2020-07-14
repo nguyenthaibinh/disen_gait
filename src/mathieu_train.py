@@ -6,7 +6,7 @@ import torch.optim as optim
 import torchvision as tv
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
-from accuracy import knn_evaluate
+from metrics import knn_evaluate
 from nets.mathieu_net import Encoder, Decoder, Discriminator
 from itertools import cycle
 
