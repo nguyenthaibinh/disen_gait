@@ -91,7 +91,7 @@ def main():
     else:
         checkpoint_dir = Path(ROOT_DIR, f'checkpoints/casia_gei/{model_name}/{train_cfg}')
     net = Encoder()
-    encoder_file = Path(checkpoint_dir, f'encoder_epoch_{epoch}.pth')
+    encoder_file = Path(checkpoint_dir, f'encoder_epoch_{epoch:05}.pth')
     print("snapshot_file:", encoder_file)
     if timestamp is not None:
         result_out_dir = Path(ROOT_DIR, f'results/casia/casia_gei/{model_name}/{train_cfg}/{timestamp}')
