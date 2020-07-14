@@ -129,11 +129,15 @@ def load_multi_images(data_root, subject_ids, conditions, views, channels=1, wid
             for view in views:
                 file_path = Path(data_root, f'{sub_id}/{condition}/{sub_id}-{condition}-{view}.png')
                 if file_path.exists():
-                    paths.append(file_path)
-                    list_subject_ids.append(sub_id)
-                    list_conditions.append(condition)
-                    list_views.append(view)
-                    img = load_image(file_path)
-                    images.append(img)
+                    try:
+                        img = load_image(file_path)
+                        paths.append(file_path)
+                        list_subject_ids.append(sub_id)
+                        list_conditions.append(condition)
+                        list_views.append(view)
+                        images.append(img)
+                    except Exception as e:
+                        print("Load image Error!! ", file_path)
+                        print(e)
     images = images.asarray(images)
     return images, list_subject_ids, list_conditions, list_views
