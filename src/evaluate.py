@@ -17,7 +17,7 @@ def read_arguments():
                         help='enables CUDA training')
     parser.add_argument('--env', type=str, default='local',
                         help='Environment to run the script.')
-    parser.add_argument('--model-name', type=str, default='siamese_stgcn',
+    parser.add_argument('--model-name', type=str, default='siamese_drl_gait_model',
                         help='Name of the model to be used.')
     parser.add_argument('--channels', nargs='+', type=int, default=[0, 1],
                         help='the input channels: 0: x, 1: y, 2: dx, 3: dy, 4: ax, 5: ay')
