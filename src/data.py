@@ -140,5 +140,5 @@ def load_multi_images(data_root, subject_ids, conditions, views, channels=1, wid
                     except Exception as e:
                         print("Load image Error!! ", file_path)
                         print(e)
-    images = images.asarray(images)
+    images = np.asarray(images)
     return images, list_subject_ids, list_conditions, list_views
