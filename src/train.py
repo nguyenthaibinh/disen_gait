@@ -186,7 +186,7 @@ class DlrAutoEncTrainer(object):
 
             self.visualize(epoch, train_set, size=32)
 
-            if epoch % 100 == 0:
+            if epoch % self.checkpoint_freq == 0:
                 self.save_model(epoch)
 
             if verbose is True:
