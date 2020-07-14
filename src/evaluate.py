@@ -81,7 +81,7 @@ def main():
     else:
         test_ids = [f'{i:03}' for i in range(1, 10)]
 
-    ROOT_DIR = Path(__file__).resolve().parents[2]
+    ROOT_DIR = Path(__file__).resolve().parents[1]
     model_name = args.model_name
     train_conf_file = Path(ROOT_DIR, f'configs/casia_train_cfg.yaml')
     train_conf = ConfigLoader(train_conf_file).config

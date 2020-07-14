@@ -1,4 +1,4 @@
-data_path: '{ROOT_DIR}/data/casia/cooked/skel_full'
+data_path: '/home/nbinh/datasets/casia/gei'
 casia_train_001:
   train_conditions: ['bg-01', 'bg-02', 'nm-01', 'nm-02']
   val_gallery_conditions: ['nm-01', 'nm-02']
