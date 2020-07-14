@@ -130,6 +130,7 @@ def load_multi_images(data_root, subject_ids, conditions, views, channels=1, wid
                 file_path = Path(data_root, f'{sub_id}/{condition}/{sub_id}-{condition}-{view}.png')
                 if file_path.exists():
                     try:
+                        file_path = str(file_path)
                         img = load_image(file_path)
                         paths.append(file_path)
                         list_subject_ids.append(sub_id)
