@@ -47,7 +47,7 @@ def evaluate(net, device, data_root, probe_sub_id_set, gallery_sub_id_set, probe
                                        conditions=probe_condition_set, views=[probe_view])
         probe_images, probe_sub_ids, probe_conditions, probe_views = probe_info
         probe_images = th.from_numpy(probe_images).to(device, dtype=th.float)
-        probe_features = net(probe_images)
+        probe_features, _ = net(probe_images)
         probe_features = probe_features.detach().cpu().numpy()
         for gallery_view_idx in range(11):
             gallery_view = f'{gallery_view_idx * 18:03}'
@@ -56,7 +56,7 @@ def evaluate(net, device, data_root, probe_sub_id_set, gallery_sub_id_set, probe
             gallery_images, gallery_sub_ids, gallery_conditions, gallery_views = gallery_info
 
             gallery_images = th.from_numpy(gallery_images).to(device, dtype=th.float)
-            gallery_features = net(gallery_images)
+            gallery_features, _ = net(gallery_images)
             gallery_features = gallery_features.detach().cpu().numpy()
             hit_rate_1, pre_1, recall_1 = knn_evaluate(probe_features, probe_sub_ids, gallery_features,
                                                        gallery_sub_ids, k=1)
